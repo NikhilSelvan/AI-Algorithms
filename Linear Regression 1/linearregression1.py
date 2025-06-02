@@ -28,7 +28,7 @@ correlation = grade_data['X'].corr(grade_data['Y'])
 print(f"Correlation between ACT and GPA: {correlation}")
 
 # d) Build regression model
-#model = sm.OLS(grade_data['Y'], X).fit()
+model = sm.OLS(grade_data['Y'], X).fit()
 print("\nRegression Model Summary:")
 print(model.summary())
 

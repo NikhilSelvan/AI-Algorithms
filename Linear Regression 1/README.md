@@ -99,6 +99,109 @@ The analysis includes:
    - There is a negative correlation between education and experience, suggesting that people with more education tend to have less work experience
 
 ## Output
+Correlation between ACT and GPA: 0.26948180326626364
+
+Regression Model Summary:
+                            OLS Regression Results
+==============================================================================
+Dep. Variable:                      Y   R-squared:                       0.073
+Model:                            OLS   Adj. R-squared:                  0.065
+Method:                 Least Squares   F-statistic:                     9.240
+Date:                Tue, 27 May 2025   Prob (F-statistic):            0.00292
+Time:                        18:29:29   Log-Likelihood:                -112.50
+No. Observations:                 120   AIC:                             229.0
+Df Residuals:                     118   BIC:                             234.6
+Df Model:                           1
+Covariance Type:            nonrobust
+==============================================================================
+                 coef    std err          t      P>|t|      [0.025      0.975]
+------------------------------------------------------------------------------
+const          2.1140      0.321      6.588      0.000       1.479       2.750
+X              0.0388      0.013      3.040      0.003       0.014       0.064
+==============================================================================
+Omnibus:                       26.969   Durbin-Watson:                   1.831
+Prob(Omnibus):                  0.000   Jarque-Bera (JB):               47.360
+Skew:                          -0.994   Prob(JB):                     5.20e-11
+Kurtosis:                       5.349   Cond. No.                         142.
+==============================================================================
+
+Notes:
+[1] Standard Errors assume that the covariance matrix of the errors is correctly specified.
+Number of observations: 2000
+
+Summary Statistics:
+              wage         educ        exper         race       smsa           ne           mw           so          we           pt
+count  2000.000000  2000.000000  2000.000000  2000.000000  2000.0000  2000.000000  2000.000000  2000.000000  2000.00000  2000.000000   
+mean    608.117865    13.111000    18.410500     0.078000     0.7560     0.229000     0.248500     0.312500     0.21000     0.092500   
+std     459.832629     3.004196    13.375778     0.268239     0.4296     0.420294     0.432251     0.463628     0.40741     0.289803   
+min      50.390000     0.000000    -2.000000     0.000000     0.0000     0.000000     0.000000     0.000000     0.00000     0.000000   
+25%     308.640000    12.000000     8.000000     0.000000     1.0000     0.000000     0.000000     0.000000     0.00000     0.000000   
+50%     522.320000    12.000000    15.000000     0.000000     1.0000     0.000000     0.000000     0.000000     0.00000     0.000000   
+75%     783.480000    16.000000    27.000000     0.000000     1.0000     0.000000     0.000000     1.000000     0.00000     0.000000   
+max    7716.050000    18.000000    59.000000     1.000000     1.0000     1.000000     1.000000     1.000000     1.00000     1.000000   
+
+Correlation Matrix:
+           wage      educ     exper
+wage   1.000000  0.248336  0.183201
+educ   0.248336  1.000000 -0.302479
+exper  0.183201 -0.302479  1.000000
+
+Correlation between wage and race: -0.09622038659128118
+
+Education Regression Model Summary:
+                            OLS Regression Results
+==============================================================================
+Dep. Variable:                   wage   R-squared:                       0.062
+Model:                            OLS   Adj. R-squared:                  0.061
+Method:                 Least Squares   F-statistic:                     131.3
+Date:                Tue, 27 May 2025   Prob (F-statistic):           1.72e-29
+Time:                        18:29:32   Log-Likelihood:                -15035.
+No. Observations:                2000   AIC:                         3.007e+04
+Df Residuals:                    1998   BIC:                         3.009e+04
+Df Model:                           1
+Covariance Type:            nonrobust
+==============================================================================
+                 coef    std err          t      P>|t|      [0.025      0.975]
+------------------------------------------------------------------------------
+const        109.7538     44.616      2.460      0.014      22.254     197.253
+educ          38.0111      3.317     11.459      0.000      31.506      44.516
+==============================================================================
+Omnibus:                     1980.408   Durbin-Watson:                   1.910
+Prob(Omnibus):                  0.000   Jarque-Bera (JB):           231041.874
+Skew:                           4.419   Prob(JB):                         0.00
+Kurtosis:                      54.908   Cond. No.                         60.6
+==============================================================================
+
+Notes:
+[1] Standard Errors assume that the covariance matrix of the errors is correctly specified.
+
+Experience Regression Model Summary:
+                            OLS Regression Results
+==============================================================================
+Dep. Variable:                   wage   R-squared:                       0.034
+Model:                            OLS   Adj. R-squared:                  0.033
+Method:                 Least Squares   F-statistic:                     69.39
+Date:                Tue, 27 May 2025   Prob (F-statistic):           1.48e-16
+Time:                        18:29:32   Log-Likelihood:                -15065.
+No. Observations:                2000   AIC:                         3.013e+04
+Df Residuals:                    1998   BIC:                         3.015e+04
+Df Model:                           1
+Covariance Type:            nonrobust
+==============================================================================
+                 coef    std err          t      P>|t|      [0.025      0.975]
+------------------------------------------------------------------------------
+const        492.1669     17.204     28.607      0.000     458.427     525.907
+exper          6.2981      0.756      8.330      0.000       4.815       7.781
+==============================================================================
+Omnibus:                     1741.557   Durbin-Watson:                   1.898
+Prob(Omnibus):                  0.000   Jarque-Bera (JB):           112147.928
+Skew:                           3.749   Prob(JB):                         0.00
+Kurtosis:                      38.910   Cond. No.                         38.8
+==============================================================================
+
+Notes:
+[1] Standard Errors assume that the covariance matrix of the errors is correctly specified.
+
 
 The code generates:
 1. Multiple scatter plots saved as PNG files
